@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
+// to use custom icons
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// to use the custom card widget
 import '../components/reusable_card.dart';
+// to use the custom icon content widget to fill the card
 import '../components/icon_content.dart';
+// to use the custom round button widget
 import '../components/round_icon_button.dart';
+// to use the bottom button widget
 import '../components/bottom_button.dart';
+// to access our results to send to the bmipage
 import 'package:bmi_calculator/calculator_brain.dart';
+// to use our constants
 import '../constants.dart';
+// to use our BMIPage as our navigator route
 import 'bmi_page.dart';
 
-enum Gender { male, female }
+//enum Gender { male, female }
 
 class InputPage extends StatefulWidget {
   @override
@@ -16,10 +24,15 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  // to represent if male is selected
   bool maleSelected = false;
+  // to represent if female is selected
   bool femaleSelected = false;
+  // to represent the default height
   int height = 180;
+  // to represent the default weight
   int weight = 60;
+  // to represent the default age
   int age = 21;
 
   @override
@@ -44,6 +57,7 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableCard(
                       color:
+                          // to change the color of the card if male is selected
                           maleSelected ? kActiveCardColor : kInactiveCardColor,
                       cardChild: IconContent(
                         icon: FontAwesomeIcons.mars,
